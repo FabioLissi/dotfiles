@@ -1,0 +1,67 @@
+#changing window focus within space
+alt - down : yabai -m window --focus south
+alt - up : yabai -m window --focus north
+alt - left : yabai -m window --focus west
+alt - right : yabai -m window --focus east
+
+#change focus between external displays 
+alt + cmd - left : yabai -m display --focus west
+alt + cmd - right : yabai -m display --focus est
+
+#rotate layout clockwise
+shift + alt - r : yabai -m space --rotate 270
+
+#flip along y-axis
+shift + alt - y : yabai -m space --mirror y-axis
+
+#flip along x-axis
+shift + alt - x : yabai -m space --mirror x-axis
+
+#toggle window float
+shift + alt - f : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+#maximize window
+shift + alt - m : yabai -m window --toggle zoom-fullscreen
+
+#balance out tree of windows
+shift + alt - b : yabai -m space --balance
+
+#move windows and split
+shift + alt - down : yabai -m window --warp south
+shift + alt - up : yabai -m window --warp north
+shift + alt - left : yabai -m window --warp west
+shift + alt - right : yabai -m window --warp east
+
+#move window to the display 
+shift + ctrl - left : yabai -m window --display west; yabai -m display --focus west;
+shift + ctrl - right : yabai -m window --display east;cyabai -m display --focus east;
+
+#move window to prev and next space 
+shift + ctrl - p : yabai -m window --space prev --focus;
+shift + ctrl - n : yabai -m window --space next --focus;
+
+#move window to space
+shift + ctrl - 1 : yabai -m window --space 1 --focus;
+shift + ctrl - 2 : yabai -m window --space 2 --focus;
+shift + ctrl - 3 : yabai -m window --space 3 --focus;
+shift + ctrl - 4 : yabai -m window --space 4 --focus;
+shift + ctrl - 5 : yabai -m window --space 5 --focus;
+shift + ctrl - 6 : yabai -m window --space 6 --focus;
+shift + ctrl - 7 : yabai -m window --space 7 --focus;
+shift + ctrl - 8 : yabai -m window --space 8 --focus;
+shift + ctrl - 9 : yabai -m window --space 9 --focus;
+
+#swap windows
+ctrl + alt - down : yabai -m window --swap south
+ctrl + alt - up : yabai -m window --swap north
+ctrl + alt - left : yabai -m window --swap west
+ctrl + alt - right : yabai -m window --swap east
+
+# -- start/stop yabai -- #
+ctrl + alt - q : yabai --stop-service;
+ctrl + alt - s : yabai --start-service;
+
+# open terminal, blazingly fast compared to iTerm/Hyper
+cmd - return : kitty --single-instance -d ~
+
+
