@@ -4,12 +4,14 @@ macOS development environment configs: ghostty, neovim (NvChad), fish, tmux, sta
 
 ## Setup on a new machine
 
-```fish
-if test -d ~/dotfiles/.git
+Paste into zsh (the stock macOS shell — works before fish is installed):
+
+```sh
+if [ -d ~/dotfiles/.git ]; then
     git -C ~/dotfiles pull
 else
     git clone https://github.com/FabioLissi/dotfiles.git ~/dotfiles
-end
+fi
 
 mkdir -p ~/.config/git
 ln -sfn ~/dotfiles/ghostty ~/.config/ghostty
@@ -27,7 +29,7 @@ aside first, e.g. `mv ~/.config/nvim ~/.config/nvim.bak`.
 
 ### Dependencies
 
-```fish
+```sh
 brew install fish starship neovim tmux bat exa trash pyenv fzf
 ```
 
