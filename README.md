@@ -7,7 +7,7 @@ macOS development environment configs: ghostty, neovim (NvChad), fish, tmux, sta
 ```fish
 git clone https://github.com/FabioLissi/dotfiles.git ~/dotfiles
 
-mkdir -p ~/.config
+mkdir -p ~/.config/git
 ln -s ~/dotfiles/ghostty ~/.config/ghostty
 ln -s ~/dotfiles/nvim ~/.config/nvim
 ln -s ~/dotfiles/fish ~/.config/fish
