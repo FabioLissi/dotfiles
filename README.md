@@ -5,7 +5,11 @@ macOS development environment configs: ghostty, neovim (NvChad), fish, tmux, sta
 ## Setup on a new machine
 
 ```fish
-git clone https://github.com/FabioLissi/dotfiles.git ~/dotfiles
+if test -d ~/dotfiles/.git
+    git -C ~/dotfiles pull
+else
+    git clone https://github.com/FabioLissi/dotfiles.git ~/dotfiles
+end
 
 mkdir -p ~/.config/git
 ln -sfn ~/dotfiles/ghostty ~/.config/ghostty
