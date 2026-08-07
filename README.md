@@ -8,14 +8,18 @@ macOS development environment configs: ghostty, neovim (NvChad), fish, tmux, sta
 git clone https://github.com/FabioLissi/dotfiles.git ~/dotfiles
 
 mkdir -p ~/.config/git
-ln -s ~/dotfiles/ghostty ~/.config/ghostty
-ln -s ~/dotfiles/nvim ~/.config/nvim
-ln -s ~/dotfiles/fish ~/.config/fish
-ln -s ~/dotfiles/tmux ~/.config/tmux
-ln -s ~/dotfiles/starship/starship.toml ~/.config/starship.toml
-ln -s ~/dotfiles/git/gitconfig ~/.gitconfig
-ln -s ~/dotfiles/git/ignore ~/.config/git/ignore
+ln -sfn ~/dotfiles/ghostty ~/.config/ghostty
+ln -sfn ~/dotfiles/nvim ~/.config/nvim
+ln -sfn ~/dotfiles/fish ~/.config/fish
+ln -sfn ~/dotfiles/tmux ~/.config/tmux
+ln -sfn ~/dotfiles/starship/starship.toml ~/.config/starship.toml
+ln -sfn ~/dotfiles/git/gitconfig ~/.gitconfig
+ln -sfn ~/dotfiles/git/ignore ~/.config/git/ignore
 ```
+
+Re-runnable: `-sfn` replaces existing files and symlinks. Caveat: if one of the
+`~/.config` targets already exists as a real directory (not a symlink), move it
+aside first, e.g. `mv ~/.config/nvim ~/.config/nvim.bak`.
 
 ### Dependencies
 
