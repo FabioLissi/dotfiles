@@ -61,8 +61,14 @@ if ! grep -qx "$FISH_BIN" /etc/shells; then
 fi
 CURRENT_SHELL="$(dscl . -read "/Users/$USER" UserShell 2>/dev/null | awk '{print $2}')"
 if [ "$CURRENT_SHELL" != "$FISH_BIN" ]; then
-    chsh -s "$FISH_BIN"
-    echo "Default shell set to fish — new Ghostty windows will use it."
+    # < /dev/tty so the password prompt works when piped via curl | bash
+    if chsh -s "$FISH_BIN" < /dev/tty; then
+        echo "Default shell set to fish — fully quit Ghostty (Cmd+Q) and reopen."
+    else
+        warn "chsh failed — run manually: chsh -s $FISH_BIN"
+    fi
+else
+    echo "fish is already the default shell"
 fi
 
 step "fish plugins (fisher)"
