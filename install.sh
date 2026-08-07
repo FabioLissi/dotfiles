@@ -80,7 +80,8 @@ fi
 "$HOME/.config/tmux/plugins/tpm/bin/install_plugins" || warn "tpm plugin install failed — run prefix + I inside tmux"
 
 step "neovim plugins"
-nvim --headless "+Lazy! sync" +qa || warn "lazy.nvim sync failed — plugins will install on first nvim launch"
+# restore (not sync): install the exact commits from lazy-lock.json
+nvim --headless "+Lazy! restore" +qa || warn "lazy.nvim restore failed — run :Lazy restore inside nvim"
 
 step "Per-machine files"
 if [ ! -f "$HOME/.config/fish/secrets.fish" ]; then

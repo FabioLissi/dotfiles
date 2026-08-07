@@ -1,4 +1,11 @@
 return {
+  -- NvChad pulls this from Codeberg, which corporate networks often block —
+  -- override with the GitHub mirror (has the same commits, incl. the locked one)
+  {
+    "cmp-async-path",
+    url = "https://github.com/FelipeLema/cmp-async-path.git",
+  },
+
   {
     "stevearc/conform.nvim",
     -- event = 'BufWritePre', -- uncomment for format on save
