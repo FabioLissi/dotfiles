@@ -25,7 +25,7 @@ else
 fi
 
 step "Packages"
-brew install fish starship neovim tmux bat eza trash pyenv fzf gh
+brew install fish starship neovim tmux bat eza trash pyenv fzf gh ripgrep fd node
 brew install --cask ghostty font-symbols-only-nerd-font
 
 step "Fonts"
