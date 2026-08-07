@@ -12,4 +12,5 @@ fish/functions/*
 !fish/functions/postexec_newline.fish
 !fish/functions/config_update.fish
 !fish/functions/refresh.fish
+!fish/functions/secrets_sync.fish
 tmux/plugins/

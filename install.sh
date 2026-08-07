@@ -6,6 +6,12 @@ set -e
 DOTFILES="$HOME/dotfiles"
 REPO="https://github.com/FabioLissi/dotfiles.git"
 
+# --apps: also install the full personal app set from the Brewfile
+INSTALL_APPS=0
+for arg in "$@"; do
+    [ "$arg" = "--apps" ] && INSTALL_APPS=1
+done
+
 step() { printf '\n\033[1;34m==> %s\033[0m\n' "$1"; }
 warn() { printf '\033[1;33mwarning:\033[0m %s\n' "$1"; }
 
@@ -33,6 +39,11 @@ if [ -d "$DOTFILES/.git" ]; then
     git -C "$DOTFILES" pull --ff-only
 else
     git clone "$REPO" "$DOTFILES"
+fi
+
+if [ "$INSTALL_APPS" = 1 ]; then
+    step "Full app set (Brewfile)"
+    brew bundle install --file="$DOTFILES/Brewfile" || warn "brew bundle had failures — re-run 'brew bundle install --file=~/dotfiles/Brewfile' to retry"
 fi
 
 step "Symlinks"
