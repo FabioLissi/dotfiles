@@ -18,7 +18,7 @@ deleted. Or run it from a clone: `bash ~/dotfiles/install.sh`.
 
 ### Manual steps it can't do
 
-- **PragmataPro Liga** is a commercial font — copy the font files into `~/Library/Fonts` yourself (the script warns until you do)
+- Nothing font-related anymore — IosevkaTerm Nerd Font installs via Homebrew
 - `~/repos/forge-fish` is a local fish plugin — clone it, or remove it from `fish_plugins`
 - The per-machine secrets files below
 

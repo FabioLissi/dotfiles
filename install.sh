@@ -26,12 +26,7 @@ fi
 
 step "Packages"
 brew install fish starship neovim tmux bat eza trash pyenv fzf gh ripgrep fd node
-brew install --cask ghostty font-jetbrains-mono-nerd-font font-symbols-only-nerd-font
-
-step "Fonts"
-if ! find ~/Library/Fonts /Library/Fonts -iname '*pragmata*' 2>/dev/null | grep -q .; then
-    warn "PragmataPro Liga not installed (commercial font — copy the .ttf/.otf files to ~/Library/Fonts by hand). Ghostty falls back to Symbols Nerd Font Mono until then."
-fi
+brew install --cask ghostty font-iosevka-term-nerd-font font-jetbrains-mono-nerd-font font-symbols-only-nerd-font
 
 step "Dotfiles repo"
 if [ -d "$DOTFILES/.git" ]; then
