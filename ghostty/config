@@ -1,8 +1,11 @@
 # ghostty +show-config --default --docs
 # ghostty +list-themes
 
-font-family                    = Symbols Nerd Font Mono
+# Order matters: the first *installed* family becomes the primary font and sets
+# cell metrics — keep text fonts first, symbols-only fonts last
 font-family                    = PragmataPro Liga
+font-family                    = JetBrainsMono Nerd Font
+font-family                    = Symbols Nerd Font Mono
 font-family-bold               = PragmataPro Liga
 font-family-italic             = PragmataPro Liga
 font-family-bold-italic        = PragmataPro Liga
