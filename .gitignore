@@ -1,0 +1,14 @@
+# Machine state — may contain tokens (fish_variables), never commit
+fish/fish_variables
+fish/secrets.fish
+
+# Plugin-managed files (fisher / tpm reinstall these)
+fish/completions/
+fish/conf.d/
+fish/themes/
+fish/functions/*
+!fish/functions/fish.fish
+!fish/functions/gcp.fish
+!fish/functions/fish_prompt.fish
+!fish/functions/postexec_newline.fish
+tmux/plugins/
