@@ -11,4 +11,5 @@ fish/functions/*
 !fish/functions/gcp.fish
 !fish/functions/fish_prompt.fish
 !fish/functions/postexec_newline.fish
+!fish/functions/config_update.fish
 tmux/plugins/
