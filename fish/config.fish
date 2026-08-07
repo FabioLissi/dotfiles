@@ -84,6 +84,10 @@ function get_idf
       source $HOME/work-repos/esp-idf/export.fish
  end
 
+# Default editor
+set -gx EDITOR nvim
+set -gx VISUAL nvim
+
 # Secrets (API keys etc.) live in an untracked local file — create it by hand:
 #   ~/.config/fish/secrets.fish
 test -f ~/.config/fish/secrets.fish; and source ~/.config/fish/secrets.fish
