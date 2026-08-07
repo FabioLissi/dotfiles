@@ -4,39 +4,23 @@ macOS development environment configs: ghostty, neovim (NvChad), fish, tmux, sta
 
 ## Setup on a new machine
 
-Paste into zsh (the stock macOS shell — works before fish is installed):
+Paste into zsh (the stock macOS shell) — idempotent, re-run as often as you like:
 
 ```sh
-if [ -d ~/dotfiles/.git ]; then
-    git -C ~/dotfiles pull
-else
-    git clone https://github.com/FabioLissi/dotfiles.git ~/dotfiles
-fi
-
-mkdir -p ~/.config/git
-ln -sfn ~/dotfiles/ghostty ~/.config/ghostty
-ln -sfn ~/dotfiles/nvim ~/.config/nvim
-ln -sfn ~/dotfiles/fish ~/.config/fish
-ln -sfn ~/dotfiles/tmux ~/.config/tmux
-ln -sfn ~/dotfiles/starship/starship.toml ~/.config/starship.toml
-ln -sfn ~/dotfiles/git/gitconfig ~/.gitconfig
-ln -sfn ~/dotfiles/git/ignore ~/.config/git/ignore
+curl -fsSL https://raw.githubusercontent.com/FabioLissi/dotfiles/main/install.sh | bash
 ```
 
-Re-runnable: `-sfn` replaces existing files and symlinks. Caveat: if one of the
-`~/.config` targets already exists as a real directory (not a symlink), move it
-aside first, e.g. `mv ~/.config/nvim ~/.config/nvim.bak`.
+The script installs Homebrew, packages (fish, starship, neovim, tmux, bat, eza,
+trash, pyenv, fzf, gh), Ghostty, Symbols Nerd Font Mono, symlinks all configs,
+makes fish the default shell (so Ghostty stops opening zsh), and sets up fisher
+and tpm plugins. Existing real config directories are moved to `*.bak.*`, never
+deleted. Or run it from a clone: `bash ~/dotfiles/install.sh`.
 
-### Dependencies
+### Manual steps it can't do
 
-```sh
-brew install fish starship neovim tmux bat exa trash pyenv fzf
-```
-
-- **Fonts**: PragmataPro Liga and Symbols Nerd Font Mono (ghostty)
-- **fish plugins**: install [fisher](https://github.com/jorgebucaran/fisher), then `fisher update` (reads `fish_plugins`). Note: `~/repos/forge-fish` is a local plugin — clone it first or remove it from `fish_plugins`.
-- **tmux plugins**: `git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm`, then prefix + I inside tmux
-- **neovim**: plugins install automatically via lazy.nvim on first launch
+- **PragmataPro Liga** is a commercial font — copy the font files into `~/Library/Fonts` yourself (the script warns until you do)
+- `~/repos/forge-fish` is a local fish plugin — clone it, or remove it from `fish_plugins`
+- The per-machine secrets files below
 
 ### Secrets
 

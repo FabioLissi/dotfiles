@@ -49,6 +49,12 @@ if type -q exa
   abbr --add -g ls 'exa --long --classify --all --header --git --no-user --tree --level 1'
 end
 
+# `ls` → `eza` abbreviation (maintained fork of exa; exa is gone from Homebrew)
+# Requires `brew install eza`
+if type -q eza
+  abbr --add -g ls 'eza --long --classify --all --header --git --no-user --tree --level 1'
+end
+
 # `cat` → `bat` abbreviation
 # Requires `brew install bat`
 if type -q bat
