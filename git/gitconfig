@@ -1,6 +1,8 @@
 [user]
-	email =
 	name = Fabio Lissi
+[include]
+	# Per-machine settings (email etc.) — untracked, create by hand
+	path = ~/.gitconfig.local
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

@@ -32,3 +32,10 @@ brew install fish starship neovim tmux bat exa trash pyenv fzf
 
 API keys are not tracked. Create `~/.config/fish/secrets.fish` by hand with any
 `set -gx MY_API_KEY "..."` exports; `config.fish` sources it when present.
+
+Git email is per-machine. Create `~/.gitconfig.local` by hand:
+
+```gitconfig
+[user]
+	email = you@example.com
+```
