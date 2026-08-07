@@ -99,7 +99,15 @@ if [ ! -f "$HOME/.config/fish/secrets.fish" ]; then
     warn "create ~/.config/fish/secrets.fish for API keys (set -gx MY_API_KEY \"...\")"
 fi
 if [ ! -f "$HOME/.gitconfig.local" ]; then
-    warn "create ~/.gitconfig.local with your git email:  [user]\\n\\temail = you@example.com"
+    # < /dev/tty so the prompt works when piped via curl | bash
+    printf 'git email for this machine (blank to skip): '
+    read -r GIT_EMAIL < /dev/tty || GIT_EMAIL=""
+    if [ -n "$GIT_EMAIL" ]; then
+        printf '[user]\n\temail = %s\n' "$GIT_EMAIL" > "$HOME/.gitconfig.local"
+        echo "wrote ~/.gitconfig.local"
+    else
+        warn "skipped — create ~/.gitconfig.local with your git email:  [user]\\n\\temail = you@example.com"
+    fi
 fi
 
 printf '\n\033[1;32mDone.\033[0m Open a new Ghostty window — it will start in fish.\n'
