@@ -37,6 +37,12 @@ brew install --cask ghostty font-iosevka-term-nerd-font font-jetbrains-mono-nerd
 step "Dotfiles repo"
 if [ -d "$DOTFILES/.git" ]; then
     git -C "$DOTFILES" pull --ff-only
+elif [ -d "$DOTFILES" ]; then
+    # dir already exists (e.g. untracked per-machine files staged before clone)
+    git -C "$DOTFILES" init -b main
+    git -C "$DOTFILES" remote add origin "$REPO"
+    git -C "$DOTFILES" fetch origin
+    git -C "$DOTFILES" checkout -t origin/main
 else
     git clone "$REPO" "$DOTFILES"
 fi
