@@ -98,4 +98,3 @@ set -gx VISUAL nvim
 #   ~/.config/fish/secrets.fish
 test -f ~/.config/fish/secrets.fish; and source ~/.config/fish/secrets.fish
 
-set -gx FORGE_EDITOR "vi"

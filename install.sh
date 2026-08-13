@@ -90,9 +90,6 @@ fi
 
 step "fish plugins (fisher)"
 fish -c 'type -q fisher; or begin; curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source; and fisher install jorgebucaran/fisher; end'
-if [ ! -d "$HOME/repos/forge-fish" ]; then
-    warn "~/repos/forge-fish missing (local plugin in fish_plugins) — clone it and re-run, or remove it from fish_plugins"
-fi
 fish -c 'fisher update' || warn "fisher update reported errors — see above"
 
 step "tmux plugins (tpm)"
