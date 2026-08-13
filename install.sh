@@ -44,6 +44,11 @@ fi
 if [ "$INSTALL_APPS" = 1 ]; then
     step "Full app set (Brewfile)"
     brew bundle install --file="$DOTFILES/Brewfile" || warn "brew bundle had failures — re-run 'brew bundle install --file=~/dotfiles/Brewfile' to retry"
+    # untracked private app inventory, if this machine has one
+    if [ -f "$DOTFILES/Brewfile.local" ]; then
+        step "Local app set (Brewfile.local)"
+        brew bundle install --file="$DOTFILES/Brewfile.local" || warn "Brewfile.local had failures (mas apps need App Store sign-in) — re-run to retry"
+    fi
 fi
 
 step "Symlinks"

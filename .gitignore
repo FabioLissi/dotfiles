@@ -2,6 +2,10 @@
 fish/fish_variables
 fish/secrets.fish
 
+# Private machine setup — repo is public, keep the app list and OS prefs out of it
+Brewfile.local
+macos.sh
+
 # Plugin-managed files (fisher / tpm reinstall these)
 fish/completions/
 fish/conf.d/
