@@ -2,16 +2,22 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-starship init fish | source
+# Setup brew FIRST — everything below depends on /opt/homebrew/bin being on
+# PATH, and non-login shells (ssh remote commands) don't get it otherwise
+if test -x /opt/homebrew/bin/brew
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+end
+
+# Prompt — interactive shells only, and only if starship is actually there
+if status is-interactive; and type -q starship
+    starship init fish | source
+end
 
 # Disable the fish greeting message
 set fish_greeting ""
 
 # Print a new line after any command
 source ~/.config/fish/functions/postexec_newline.fish
-
-# Setup brew
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Clear line on CTRL + C
 # Sometimes it still doesn't work well enough on node.js scripts :(
