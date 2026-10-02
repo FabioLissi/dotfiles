@@ -70,6 +70,11 @@ done
 ln -sfn "$DOTFILES/starship/starship.toml" "$HOME/.config/starship.toml"
 ln -sfn "$DOTFILES/git/gitconfig" "$HOME/.gitconfig"
 ln -sfn "$DOTFILES/git/ignore" "$HOME/.config/git/ignore"
+VSCODE_USER="$HOME/Library/Application Support/Code/User"
+mkdir -p "$VSCODE_USER"
+for f in settings.json keybindings.json; do
+    ln -sfn "$DOTFILES/vscode/$f" "$VSCODE_USER/$f"
+done
 
 step "fish as default shell"
 FISH_BIN="$(command -v fish)"

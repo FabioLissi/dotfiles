@@ -1,6 +1,6 @@
 # dotfiles
 
-macOS development environment configs: ghostty, neovim (NvChad), fish, tmux, starship, git.
+macOS development environment configs: ghostty, neovim (NvChad), fish, tmux, starship, git, VS Code.
 
 ## Setup on a new machine
 
@@ -30,6 +30,10 @@ VS Code extensions, …) there's a `Brewfile` snapshot of the personal machine:
 ```sh
 bash ~/dotfiles/install.sh --apps        # or: brew bundle install --file=~/dotfiles/Brewfile
 ```
+
+VS Code `settings.json` and `keybindings.json` live in `vscode/` and are
+symlinked into `~/Library/Application Support/Code/User/` by `install.sh`;
+extensions come from the `vscode "…"` lines in the Brewfile.
 
 ### Secrets (1Password)
 

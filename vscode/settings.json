@@ -1,0 +1,41 @@
+{
+    "workbench.colorTheme": "Afterglow Remastered",
+    "workbench.iconTheme": "vscode-icons",
+    "docker.extension.enableComposeLanguageServer": false,
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "workbench.colorCustomizations": {
+    "diffEditor.insertedTextBackground": "#1c582855", // A soft green with 44 transparency
+    "diffEditor.removedTextBackground": "#63171f55"  // A soft red with 44 transparency
+    },
+    "redhat.telemetry.enabled": false,
+    "claudeCodeChat.thinking.intensity": "think-harder",
+    "parallels-desktop.extension.path": "/Users/fabio/.parallels-desktop-vscode",
+    "parallels-desktop.prlctl.path": "/usr/local/bin/prlctl",
+    "parallels-desktop.git.path": "/usr/bin/git",
+    "parallels-desktop.brew.path": "/opt/homebrew/bin/brew",
+    "parallels-desktop.devops-service.path": "/Users/fabio/.parallels-desktop-vscode/tools/prldevops",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.editor.showTabs": "none",
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.value": 1,
+    "python.analysis.typeCheckingMode": "standard",
+    "claudeCode.preferredLocation": "panel",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "C_Cpp.intelliSenseEngine": "disabled"
+}
